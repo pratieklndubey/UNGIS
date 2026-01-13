@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSIS+20 Review | UNGIS</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        un: {
+                            blue: '#009EDB',
+                            dark: '#007bbd',
+                        },
+                        accent: {
+                            purple: '#9c27b0',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 bg-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <span class="font-bold text-2xl tracking-tight text-slate-900">UNGIS</span>
+                </a>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-slate-600 hover:text-un-blue font-medium transition-colors">Home</a>
+                    <a href="meetings.html"
+                        class="text-slate-600 hover:text-un-blue font-medium transition-colors">Meetings</a>
+                    <a href="wsis20.html" class="text-un-blue font-semibold">WSIS+20</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-un-blue focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Slide-out Menu -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-64 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 flex justify-between items-center border-b border-slate-100">
+            <span class="font-bold text-xl text-slate-900">Menu</span>
+            <button id="close-menu-btn" class="text-slate-500 hover:text-red-500 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex-1 px-6 py-8 space-y-6">
+            <a href="index.html" class="block text-lg font-medium text-slate-700 hover:text-un-blue">Home</a>
+            <a href="meetings.html" class="block text-lg font-medium text-slate-700 hover:text-un-blue">Meetings</a>
+            <a href="wsis20.html" class="block text-lg font-medium text-un-blue">WSIS+20</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20 flex-grow animate-fade-in">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-16">
+                <!-- Inline Logo -->
+                <div class="mb-8">
+                    <img src="ungis_logo.png" alt="UNGIS Logo" class="h-24 w-auto">
+                </div>
+
+                <span
+                    class="inline-block px-4 py-2 rounded-full bg-purple-50 text-accent-purple font-bold text-sm mb-6">Process
+                    & Review</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">WSIS+20 Review</h1>
+                <p class="text-xl text-slate-600 leading-relaxed">
+                    20 Years of the implementation of the WSIS Process. UNGIS coordinates the collective inputs of its
+                    member agencies to ensure the continued relevance and impact of the Information Society vision.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Section 1 -->
+                <div class="border-l-4 border-un-blue pl-6 md:pl-8 py-2">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">The Mandate</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        UNGIS supports UN system’s efforts to help bridge digital divides, strengthen capacities, and
+                        align digital transformation efforts with the 2030 Agenda for Sustainable Development. It
+                        contributes significantly to the annual WSIS Forum.
+                    </p>
+                </div>
+
+                <!-- Section 2: Roadmap/Timeline -->
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Key Milestones</h2>
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <div class="flex gap-6 items-start">
+                            <div class="flex-shrink-0 w-16 text-right font-bold text-slate-400 pt-1">Dec 2025</div>
+                            <div class="flex-grow pb-8 border-b border-slate-100">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">High-Level Meeting of the UN General
+                                    Assembly</h3>
+                                <p class="text-slate-600 text-sm">Review of the progress made in the implementation of
+                                    the WSIS outcomes.</p>
+                            </div>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex gap-6 items-start">
+                            <div class="flex-shrink-0 w-16 text-right font-bold text-slate-400 pt-1">Nov 2025</div>
+                            <div class="flex-grow pb-8 border-b border-slate-100">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Consultation with Co-Facilitators</h3>
+                                <p class="text-slate-600 text-sm">UNGIS meeting with WSIS+20 Co-Facilitators to discuss
+                                    Revision 1 of the Outcome Document.</p>
+                            </div>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex gap-6 items-start">
+                            <div class="flex-shrink-0 w-16 text-right font-bold text-slate-400 pt-1">Jul 2025</div>
+                            <div class="flex-grow pb-8 border-b border-slate-100">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">WSIS+20 High-Level Event</h3>
+                                <p class="text-slate-600 text-sm">Geneva, Switzerland. Featuring the Twenty-second UNGIS
+                                    Meeting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Documents -->
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Key Documents</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="#"
+                            class="p-6 rounded-xl border border-slate-200 hover:border-accent-purple hover:shadow-md transition-all group bg-white">
+                            <i data-lucide="file-text" class="w-8 h-8 text-accent-purple mb-4"></i>
+                            <h3 class="font-bold text-slate-900 mb-2 group-hover:text-accent-purple transition-colors">
+                                UNGIS Response to Elements Paper</h3>
+                            <p class="text-slate-500 text-xs">Official submission to the WSIS+20 Review Elements Paper.
+                            </p>
+                        </a>
+                        <a href="#"
+                            class="p-6 rounded-xl border border-slate-200 hover:border-accent-purple hover:shadow-md transition-all group bg-white">
+                            <i data-lucide="file-text" class="w-8 h-8 text-accent-purple mb-4"></i>
+                            <h3 class="font-bold text-slate-900 mb-2 group-hover:text-accent-purple transition-colors">
+                                CSTD Statement 2025-2026</h3>
+                            <p class="text-slate-500 text-xs">Statement at the CSTD Intersessional Panel.</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <img src="ungis_logo.png" alt="UNGIS Logo" class="h-10 w-auto">
+                    <span class="font-bold text-lg tracking-tight">UNGIS</span>
+                </div>
+                <div class="text-slate-500 text-sm">
+                    © 2026 UNGIS. All rights reserved. Coordinating the UN System.
+                </div>
+                <div class="flex gap-6">
+                    <a href="mailto:contact@ungis.org" class="text-slate-500 hover:text-white transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
