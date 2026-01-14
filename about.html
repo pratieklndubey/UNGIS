@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About UNGIS | United Nations Group on the Information Society</title>
+    <link rel="icon" type="image/png" href="ungis_logo.png">
+    <meta name="description" content="Learn about the United Nations Group on the Information Society (UNGIS).">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        un: {
+                            blue: '#009EDB',
+                            dark: '#007bbd',
+                        },
+                        accent: {
+                            green: '#4caf50',
+                            orange: '#ff9800',
+                            purple: '#9c27b0',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(0, 158, 219, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(76, 175, 80, 0.1) 0px, transparent 50%);
+        }
+
+        /* Hide scrollbar but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 bg-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Text Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <span class="font-bold text-2xl tracking-tight text-slate-900">UNGIS</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <!-- Home Removed Here -->
+                    <a href="about.html" class="text-un-blue font-semibold">About</a>
+                    <a href="meetings.html"
+                        class="text-slate-600 hover:text-un-blue font-medium transition-colors">Meetings</a>
+                    <a href="wsis20.html"
+                        class="text-slate-600 hover:text-un-blue font-medium transition-colors">WSIS+20</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-un-blue focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Slide-out Menu -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-[85%] max-w-sm bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 flex justify-between items-center border-b border-slate-100">
+            <span class="font-bold text-xl text-slate-900">Menu</span>
+            <button id="close-menu-btn" class="text-slate-500 hover:text-red-500 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex-1 px-6 py-8 space-y-6">
+            <!-- Home Removed Here -->
+            <a href="about.html" class="block text-lg font-medium text-un-blue">About</a>
+            <a href="meetings.html" class="block text-lg font-medium text-slate-700 hover:text-un-blue">Meetings</a>
+            <a href="wsis20.html" class="block text-lg font-medium text-slate-700 hover:text-un-blue">WSIS+20</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16 flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
+            <!-- Background Texture -->
+            <div
+                class="absolute inset-0 opacity-30 bg-[radial-gradient(#009EDB_1px,transparent_1px)] [background-size:20px_20px]">
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-un-blue/10 text-un-blue text-sm font-bold uppercase tracking-wider mb-6 animate-fade-in-up">
+                    Who We Are
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-tight animate-fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    United Nations Group on the <br /> Information Society
+                </h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s;">
+                    The inter-agency mechanism for coordinating the implementation of the World Summit on the
+                    Information Society (WSIS) outcomes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Content Body -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Intro -->
+                <div class="prose prose-lg prose-slate max-w-none mb-16">
+                    <p class="lead text-xl text-slate-700 font-medium leading-relaxed">
+                        The United Nations Group on the Information Society (UNGIS) serves as the primary inter-agency
+                        mechanism within the UN system to coordinate substantive policy issues related to the
+                        implementation of the outcomes of the World Summit on the Information Society (WSIS).
+                    </p>
+                </div>
+
+                <!-- Mission Grid -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <div class="w-12 h-12 bg-un-blue/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="target" class="w-6 h-6 text-un-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Our Mandate</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Established in 2006 effectively after the WSIS Tunis phase, UNGIS was endorsed by the UN
+                            Chief Executives Board (CEB) with a mandate to promote policy coherence and program
+                            coordination concerning Information and Communication Technologies (ICTs) across the UN
+                            system.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                        <div class="w-12 h-12 bg-accent-green/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="globe" class="w-6 h-6 text-accent-green"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 mb-3">Global Impact</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            UNGIS works to ensure that science and technology, particularly ICTs for development, remain
+                            prominent on the UN Agenda, aligning digital strategies with internationally agreed
+                            development goals, including the 2030 Agenda for Sustainable Development.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Detailed Objectives -->
+                <div class="mb-16">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-1 bg-un-blue rounded-full"></span>
+                        Key Objectives
+                    </h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-un-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Mainstreaming ICTs</h4>
+                                <p class="text-slate-600">Integrating the Information Society Agenda into the activities
+                                    and programs of CEB members to ensure digital tools drive development.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-un-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Coordinating Strategies</h4>
+                                <p class="text-slate-600">Facilitating synergies among United Nations organizations to
+                                    maximize joint efforts, avoid duplication, and enhance effectiveness.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-un-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Promoting Access</h4>
+                                <p class="text-slate-600">Facilitating developing countries' access to new and emerging
+                                    technologies and promoting public awareness of UN system implementation efforts.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-12 mb-16 relative overflow-hidden">
+                    <!-- Texture -->
+                    <div
+                        class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]">
+                    </div>
+
+                    <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div class="text-4xl md:text-5xl font-bold text-un-blue mb-2">32+</div>
+                            <div class="text-slate-400 font-medium">UN Agencies</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl md:text-5xl font-bold text-accent-green mb-2">2006</div>
+                            <div class="text-slate-400 font-medium">Established</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl md:text-5xl font-bold text-accent-orange mb-2">17</div>
+                            <div class="text-slate-400 font-medium">Observers</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl md:text-5xl font-bold text-white mb-2">1</div>
+                            <div class="text-slate-400 font-medium">Shared Vision</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center">
+                    <a target="_blank" href="https://www.itu.int/net4/wsis/ungis/Content/upload/doc/UNGISBrochure.pdf"
+                        class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-un-blue text-white font-semibold hover:bg-un-dark hover:shadow-lg transition-all">
+                        UNGIS Brochure
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="bg-slate-950 text-white py-12 border-t border-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex items-center gap-3">
+                        <img src="ungis_logo.png" alt="UNGIS Logo" class="h-10 w-auto">
+                        <span class="font-bold text-lg tracking-tight">UNGIS</span>
+                    </div>
+                    <div class="text-slate-500 text-sm">
+                        © 2026 UNGIS. All rights reserved. Coordinating the UN System.
+                    </div>
+                    <div class="flex gap-6">
+                        <a href="mailto:contact@ungis.org" class="text-slate-500 hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
