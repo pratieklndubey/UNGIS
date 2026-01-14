@@ -61,9 +61,9 @@ const observersList = [
 if (membersTrack) {
     membersList.forEach(member => {
         const memberCard = `
-            <div class="snap-center flex-shrink-0 w-48 h-32 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center p-6 group hover:border-un-blue transition-all cursor-pointer">
+            <a href="#" class="snap-center flex-shrink-0 w-48 h-32 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center p-6 group hover:border-un-blue transition-all cursor-pointer hover:shadow-lg duration-300 block">
                 <span class="text-slate-400 font-bold group-hover:text-un-blue transition-colors text-lg">${member}</span>
-            </div>
+            </a>
         `;
         membersTrack.innerHTML += memberCard;
     });
@@ -74,9 +74,9 @@ const observersTrack = document.getElementById('observers-track');
 if (observersTrack) {
     observersList.forEach(observer => {
         const observerCard = `
-            <div class="snap-center flex-shrink-0 w-48 h-24 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center p-4 group hover:border-slate-500 transition-all cursor-pointer">
+            <a href="#" class="snap-center flex-shrink-0 w-48 h-24 bg-slate-800 rounded-xl border border-slate-700 flex items-center justify-center p-4 group hover:border-slate-500 transition-all cursor-pointer hover:shadow-lg duration-300 block">
                     <span class="text-slate-500 font-semibold group-hover:text-slate-300 transition-colors text-sm">${observer}</span>
-            </div>
+            </a>
         `;
         observersTrack.innerHTML += observerCard;
     });
