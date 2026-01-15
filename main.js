@@ -252,8 +252,13 @@ if (mainHeader) {
         mainHeader.classList.remove('bg-transparent');
         mainHeader.classList.add('glass-card');
 
-        navLogoText.classList.remove('text-white');
-        navLogoText.classList.add('text-slate-900');
+        mainHeader.classList.remove('bg-transparent');
+        mainHeader.classList.add('glass-card');
+
+        if (navLogoText) {
+            navLogoText.classList.remove('text-white');
+            navLogoText.classList.add('text-slate-900');
+        }
 
         navLinks.forEach(link => {
             link.classList.remove('text-white/90', 'hover:text-white');
@@ -270,8 +275,10 @@ if (mainHeader) {
         mainHeader.classList.add('bg-transparent');
         mainHeader.classList.remove('glass-card');
 
-        navLogoText.classList.add('text-white');
-        navLogoText.classList.remove('text-slate-900');
+        if (navLogoText) {
+            navLogoText.classList.add('text-white');
+            navLogoText.classList.remove('text-slate-900');
+        }
 
         navLinks.forEach(link => {
             link.classList.add('text-white/90', 'hover:text-white');

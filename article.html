@@ -63,12 +63,16 @@
 
     <!-- Navigation -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Text Logo -->
-                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
-                    <span class="font-bold text-2xl tracking-tight text-slate-900">UNGIS</span>
-                </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex justify-end items-center h-16">
+                <!-- Left Logo (Overflows Navbar) -->
+                <div class="absolute left-4 sm:left-6 lg:left-8 top-0 z-50">
+                    <a href="index.html"
+                        class="block bg-white pb-3 pt-2 px-4 rounded-b-2xl shadow-lg border-b border-x border-slate-100 hover:shadow-xl hover:pt-4 transition-all duration-300 group">
+                        <img src="ungis_logo.png" alt="UNGIS"
+                            class="h-16 w-auto md:h-20 object-contain group-hover:scale-105 transition-transform">
+                    </a>
+                </div>
 
                 <nav class="hidden md:flex space-x-8">
                     <a href="about.html"
@@ -111,7 +115,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Breadcrumbs -->
-            <nav class="flex mb-8 text-sm text-slate-500" aria-label="Breadcrumb">
+            <!--<nav class="flex mb-8 text-sm text-slate-500" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="index.html" class="hover:text-un-blue transition-colors">Home</a>
@@ -129,7 +133,9 @@
                         </div>
                     </li>
                 </ol>
-            </nav>
+            </nav>-->
+            <br />
+
 
             <div class="grid lg:grid-cols-12 gap-12">
 
