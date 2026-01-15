@@ -93,7 +93,7 @@ const observersData = [
     { code: "UN ESCAP", name: "Economic and Social Commission for Asia and the Pacific", img: "unescap.png" },
     { code: "UN ESCWA", name: "Economic and Social Commission for Western Asia", img: "unescwa.png" },
     { code: "UNFCCC", name: "United Nations Framework Convention on Climate Change", img: "unfccc.png" },
-    { code: "UNICC", name: "United Nations International Computing Centre", img: "UNICC.jpg" },
+    { code: "UNICC", name: "United Nations International Computing Centre", img: "unicc.png" },
     { code: "UNITAR", name: "United Nations Institute for Training and Research", img: "unitar.png" },
     { code: "UNJSPF", name: "United Nations Joint Staff Pension Fund", img: "unjspf.png" },
     { code: "UNU", name: "United Nations University", img: "unu.png" }
